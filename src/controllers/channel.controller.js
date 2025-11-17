@@ -1,3 +1,7 @@
+import ChannelService from "../services/channel.service.js";
+
+
+
 class ChannelController {
     static async create(request, response) {
         try {
