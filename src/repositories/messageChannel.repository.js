@@ -60,7 +60,7 @@ class MessagesChannelRepository {
 
     static async getAllByChannelId(channel_id) {
         try {
-        const messages = await MessageChannel.find({ channel_id })
+        const messages = await MessageChannel.find({ channel_id:channel_id })
             .populate({
                 path: 'sender_member_id',
                 populate: {
@@ -79,7 +79,7 @@ class MessagesChannelRepository {
                     _id: message.sender_member_id.id_user._id,
                     name: message.sender_member_id.id_user.name
                 },
-                createdAt: message.createdAt
+                createdAt: message.created_at
             }))
 
         return messages_formatted
