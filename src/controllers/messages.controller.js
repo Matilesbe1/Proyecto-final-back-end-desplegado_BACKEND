@@ -46,7 +46,7 @@ class MessagesController {
             //Crear un mensaje
             //(Para la clase que viene) Obtener la lista de mensajes y responder
             
-            const { messages, message_created } = await MessageService.create(content, user.id, channel_selected._id)
+            const { messages, message_created } = await MessageService.create(content, member._id/* user.id */, channel_selected._id)
             return response.status(201).json({
                 ok: true,
                 status: 201,
