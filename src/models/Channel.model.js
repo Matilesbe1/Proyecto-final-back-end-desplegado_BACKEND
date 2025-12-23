@@ -5,7 +5,7 @@ const channelSchema = new mongoose.Schema(
         id_workspace: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Workspace',
-            required: true,
+            required: true
         },
         name: {
             type: String,
